@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Santuario Arcano · Logros{% endblock %}
+
+{% block content %}
+<section class="achievements-page">
+  <div class="collection-head">
+    <div>
+      <p class="eyebrow">Desafíos del sello</p>
+      <h1 class="page-title">Logros</h1>
+    </div>
+    <div class="collection-progress" id="ach-progress">
+      <span class="progress-number" id="ach-progress-number">0 / 0</span>
+      <span class="progress-label">logros reclamados</span>
+    </div>
+  </div>
+  <p class="sanctum-sub">Cumple estos desafíos y reclama su recompensa para forzar al sello a entregar sobres extra, incluso por encima del tope de cinco.</p>
+
+  <div class="achievement-list" id="achievement-list"></div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/achievements.js') }}"></script>
+{% endblock %}

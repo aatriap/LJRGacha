@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Santuario Arcano · Colección{% endblock %}
+
+{% block content %}
+<section class="collection-page">
+  <div class="collection-head">
+    <div>
+      <p class="eyebrow">El catálogo del Santuario</p>
+      <h1 class="page-title">Colección</h1>
+    </div>
+    <div class="collection-progress" id="collection-progress">
+      <span class="progress-number" id="progress-number">0 / 0</span>
+      <span class="progress-label">cartas descubiertas</span>
+    </div>
+  </div>
+
+  <div class="rarity-breakdown" id="rarity-breakdown"></div>
+
+  <div class="collection-controls">
+    <div class="view-toggle" id="view-toggle">
+      <button data-view="todas" class="is-active">Catálogo completo</button>
+      <button data-view="mia">Mi colección</button>
+    </div>
+    <div class="rarity-filter" id="rarity-filter">
+      <button data-rarity="todas" class="is-active">Todas</button>
+      <button data-rarity="comun">Común</button>
+      <button data-rarity="rara">Rara</button>
+      <button data-rarity="epica">Épica</button>
+      <button data-rarity="legendaria">Legendaria</button>
+    </div>
+  </div>
+  <div class="category-filter" id="category-filter"></div>
+
+  <div class="card-grid" id="card-grid"></div>
+  <p class="empty-hint" id="collection-empty-hint" hidden>No tienes cartas en esta categoría todavía. Vuelve al Santuario y abre un sobre.</p>
+</section>
+
+<div class="card-modal" id="card-modal">
+  <div class="card-modal-backdrop" id="card-modal-backdrop"></div>
+  <div class="card-modal-panel" id="card-modal-panel"></div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/collection.js') }}"></script>
+{% endblock %}

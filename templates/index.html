@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Santuario Arcano · El Sello{% endblock %}
+
+{% block content %}
+<section class="sanctum">
+  <div class="sanctum-intro">
+    <p class="eyebrow">El sello nunca deja de respirar</p>
+    <h1 class="sanctum-title">Abre tu sobre del día</h1>
+    <p class="sanctum-sub">Cada cinco minutos el Santuario forja un nuevo sobre. Puedes guardar hasta cinco antes de que el sello se desborde.</p>
+  </div>
+
+  <div class="queue-row" id="hero-sigils" aria-label="Sobres acumulados"></div>
+  <p class="queue-timer" id="hero-timer-text">Calculando el flujo arcano…</p>
+
+  <button class="open-btn" id="open-btn" disabled>
+    <span class="open-btn-glyph">✦</span>
+    <span class="open-btn-label">Abrir sobre</span>
+  </button>
+  <p class="open-error" id="open-error" hidden></p>
+
+  <div class="reveal-area" id="reveal-area" hidden>
+    <div class="reveal-cards" id="reveal-cards"></div>
+  </div>
+
+  <p class="empty-hint" id="empty-hint">Las cartas de tu próximo sobre aparecerán aquí.</p>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/sanctum.js') }}"></script>
+{% endblock %}
